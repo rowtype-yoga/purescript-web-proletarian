@@ -32,7 +32,7 @@ foreign import newWorker ∷ Effect (Worker Int String)
 
 ### Write a correspoding FFI file with the import
 With an FFI file that your bundler understands:
-```purs
+```js
 export const newWorker = () => new Worker(new URL("../../workers/echo.worker.js", import.meta.url))
 ```
 
@@ -46,7 +46,7 @@ This means you should have the bundled version of this worker in: `/workers/echo
 
 You can achieve this with spago by telling it to use your worker module as the Main method:
 
-```
+```sh
 spago bundle-app -m Worker.Echo --to /workers/echo.worker.js
 ```
 
