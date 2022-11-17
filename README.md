@@ -26,7 +26,6 @@ import Yoga.WebWorker (postMessageToBoss, subscribe)
 main ∷ Effect Unit
 main = subscribe (\int -> postMessageToBoss (show int))
 
--- webworker
 foreign import newWorker ∷ Effect (Worker Int String)
 ```
 
