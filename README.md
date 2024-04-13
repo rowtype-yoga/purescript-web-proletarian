@@ -24,7 +24,7 @@ import Yoga.WebProletarian.Types (Worker)
 import Yoga.WebWorker (postMessageToBoss, subscribe)
 
 main ∷ Effect Unit
-main = subscribe (\int -> postMessageToBoss (show int))
+main = subscribe (\(i :: Int) -> postMessageToBoss (show i))
 
 foreign import newWorker ∷ Effect (Worker Int String)
 ```
